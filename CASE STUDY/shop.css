@@ -161,6 +161,7 @@ height: 100vh;
 
 
 .sidebar {
+  padding-left: 10px;
   height: 100%;
   width: 0;
   position: fixed;
@@ -172,6 +173,11 @@ height: 100vh;
   transition: 0.5s;
   padding-top: 0;
   color: white;
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(94, 19, 19);
+}
+.cartnav{
+  display: flex;
+  justify-content: space-between;
+  flex: 50%;
 }
 
