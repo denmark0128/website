@@ -14,7 +14,7 @@ function LogIn() {
 
     if (foundUser) {
         alert("Login successful!");
-        window.location.href = "shop.html";
+        window.location.href = "index.html";
 
     } else {
         alert("Invalid username or password. Please try again.");
@@ -46,8 +46,25 @@ function ShowPass() {
     document.getElementById("main").style.marginLeft = "250px";
   }
   
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
   }
+  let cartItems = [];
+
+function addToCart(itemName) {
+    cartItems.push(itemName);
+    displayCartItems();
+}
+
+function displayCartItems() {
+    const cartItemsList = document.getElementById("cart-items");
+    cartItemsList.innerHTML = ""; 
+    cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        cartItemsList.appendChild(li);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", updateNavigation);
