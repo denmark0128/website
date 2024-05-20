@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Add to Cart</title>
     <link rel="stylesheet" href="shop.css">
     <script src="shop.js" defer></script>
 </head>
 <body>
+  
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         .container {
             background-image: url(images/guitar_bg.jpg);
         }
@@ -16,11 +18,23 @@
     <div class="navbar">  
         <div class="logo">
             <a href="#logo">LOGO</a>
-       </div>
-       <div class="menu">
-            <a href="javascript:void(0)" class="openbtn" onclick="openNav()"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
-            <a href="#face"><svg width="24px" height="64px" viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>facebook [#176]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" id="facebook-[#176]"> </path> </g> </g> </g> </g></svg></a>
-            <a href="login.html"><svg fill="#ffffff" width="24px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,21V3H13a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1V22a1,1,0,0,1-1,1H13a1,1,0,0,1,0-2ZM2,12a1,1,0,0,0,1,1H14.586l-2.293,2.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.414l-4-4a1,1,0,1,0-1.414,1.414L14.586,11H3A1,1,0,0,0,2,12Z"></path></g></svg></a>
+        </div>
+        <div class="menu">
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </a>
+            <a href="#face">
+                <svg width="24px" height="64px" viewBox="-5 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                    <path d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z" fill="#ffffff"></path>
+                </svg>
+            </a>
+            <a href="login.html">
+                <svg fill="#ffffff" width="24px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                    <path d="M20,21V3H13a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1V22a1,1,0,0,1-1,1H13a1,1,0,0,1,0-2ZM2,12a1,1,0,0,0,1,1H14.586l-2.293,2.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.414l-4-4a1,1,0,1,0-1.414,1.414L14.586,11H3A1,1,0,0,0,2,12Z"></path>
+                </svg>
+            </a>
         </div>
     </div>
     <hr>
@@ -53,25 +67,21 @@
                     <div class="item1 box"></div>
                     <br>
                     STRATOCASTER
-                   
                 </div> 
                 <div class="con2 image">
                     <div class="item2 box"></div>
                     <br>
-                    TELECASTER 
-                  
+                    TELECASTER
                 </div> 
                 <div class="con3 image">      
                     <div class="item3 box"></div>
                     <br>
                     JAGUAR
-                   
                 </div>    
                 <div class="con4 image">      
                     <div class="item4 box"></div>
                     <br>
                     JAZZMASTER
-                    
                 </div>                 
             </div>
         </div>
@@ -80,78 +90,80 @@
     <div class="store">
         <h1>BEST SELLERS</h1>
         <div class="container3">
-           
-            <div class="card">
-                <div class="productImage"><img  src="images/best_1-removebg.png" alt="Denim Jeans" ></div>
-                <div class="productName"><h1 >Player Stratocaster</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
-              <div class="card">
-                <div class="productImage"><img  src="images/best_2-removebg.png" alt="Denim Jeans" ></div>
-                <div class="productName"><h1 >American Professional Stratocaster</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
-              <div class="card">
-                <div class="productImage"><img  src="images/best_3-removebg.png" alt="Denim Jeans" ></div>
-                <div class="productName"><h1 >Player Plus Nashville Telecaster</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
-              <div class="card">
-                <div class="productImage"><img  src="images/best_4_removebg.png" alt="Denim Jeans" ></div>
-                <div class="productName"><h1 >Vintera II '70s Jaguar</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
-              <div class="card">
-                <div class="productImage"><img  src="images/best_5-removebg.png" alt="Denim Jeans"></div>
-                <div class="productName"><h1>Mustang</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
-              <div class="card">
-                <div class="productImage"><img  src="images/best_6-removebg.png" alt="Denim Jeans"></div>
-                <div class="productName"><h1 >Stratocaster</h1></div>
-                <div class="price"><p >$19.99</p></div>
-                <div><p><button>Add to Cart</button></p></div>
-              </div>
+            <div class="product" onclick="showProductDetails('Player Stratocaster', 102000, 'images/best_1-removebg.png')">
+                <div class="imgBox">
+                <img src="images/best_1-removebg.png" alt="Player Stratocaster">
             </div>
-       </div>
+            <div class="description">
+                <p>Player Stratocaster</p>
+                <p>P 102000</p>
+            </div>
+            </div>
+            <div class="product" onclick="showProductDetails('American Professional Stratocaster', 143000, 'images/best_2-removebg.png')">
+                 <div class="imgBox">
+                <img src="images/best_2-removebg.png" alt="American Professional Stratocaster">
+                 </div>
+                <p>American Professional Stratocaster</p>
+                <p>P 143000</p>
+            </div>
+            <div class="product" onclick="showProductDetails('Player Plus Nashville Telecaster', 153000, 'images/best_3-removebg.png')">
+                <div class="imgBox">
+                <img src="images/best_3-removebg.png" alt="Player Plus Nashville Telecaster">
+                 </div>
+                <p>Player Plus Nashville Telecaster</p>
+                <p>P 153000</p>
+            </div>
+            <div class="product" onclick="showProductDetails('Mustang', 128000, 'images/best_4_removebg.png')">
+                <div class="imgBox">
+                <img src="images/best_4_removebg.png" alt="Mustang">
+                </div>
+                <p>Mustang</p>
+                <p>P 128000</p>
+            </div>
+            <div class="product" onclick="showProductDetails('Stratocaster', 118000, 'images/best_6-removebg.png')">
+                <div class="imgBox">
+                <img src="images/best_6-removebg.png" alt="Stratocaster">
+                </div>
+                <p>Stratocaster</p>
+                <p>P 118000</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="itemDetails" style="display: none;">
+        <div class="buttonDiv">
+        <button class="closeBtn" onclick="closeItemDetails()">&times;</button>
+        </div>
+        <div class="itemContainer">
+        <div class="imgContainer">
+        <img id="productImage" src="" alt="Product Image">
+        </div>
+        <h2 id="productName">Product Name</h2>
+        <p>Price: P <span id="productPrice">0.00</span></p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+        <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+    
 
     <div id="mySidebar" class="sidebar">
         <div class="cartnav">
-        <h2>Your Cart</h2>
-        <button onclick="closeNav()"><svg width="64px" height="64px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
-         </div>
-        <div class="cartDiv">   
-            <div class="cartItems">
-                <div class="cartItem">
-                    <div class="itemImage">
-                        <!-- Product Image -->
-                        <img src="product_image.jpg" alt="Product Image">
-                    </div>
-                    <div class="itemName">
-                        <!-- Product Name -->
-                        Product Name
-                    </div>
-                    <div class="itemQuantity">
-                        <!-- Product Quantity -->
-                        Quantity: 1
-                    </div>
-                    <div class="removeButton">
-                        <!-- Remove Button -->
-                        <button onclick="removeFromCart('product_id')">Remove</button>
-                    </div>
-                </div>
-                <!-- Repeat this structure for each item in the cart -->
-            </div>
-            
+            <h2>Your Cart</h2>
+            <button onclick="closeNav()">
+                <svg width="64px" height="64px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 21.32L21 3.32001" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M3 3.32001L21 21.32" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
         </div>
-   
+        <div class="cartDiv">   
+            <div class="cartItems" id="cartItems"></div>
+            <div id="total" class="total"></div>
+
+        </div>
     </div>
-    
+
     <footer>
         <div class="footer" style="margin-top: 30px;">
         </div>
