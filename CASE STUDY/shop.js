@@ -4,8 +4,6 @@ const users = [
   { username: "arden", password: "deocampo" }
 ];
 
-let cartItems = [];
-
 function LogIn() {
   var user = document.getElementById("user").value;
   var pass = document.getElementById("pass").value;
@@ -43,44 +41,68 @@ function ShowPass() {
   }
 }
 
+
+let cart = [];
+
 function openNav() {
-  document.getElementById("mySidebar").style.width = "500px";
-  document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("mySidebar").style.width = "550px";
 }
 
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidebar").style.width = "0";
 }
 
-function addToCart(itemName) {
-  const foundItem = cartItems.find(item => item.name === itemName);
-  if (foundItem) {
-      foundItem.quantity++;
-  } else {
-      cartItems.push({ name: itemName, quantity: 1 });
-  }
-  displayCartItems();
+function showProductDetails(name, price, imageUrl) {
+    document.getElementById("itemDetails").style.display = "block";
+    document.getElementById("productImage").src = imageUrl;
+    document.getElementById("productName").innerText = name;
+    document.getElementById("productPrice").innerText = price;
 }
 
-function displayCartItems() {
- 
+function addToCart() {
+    const name = document.getElementById("productName").innerText;
+    const price = parseInt(document.getElementById("productPrice").innerText);
+    const quantity = parseInt(document.getElementById("quantity").value);
+    const imageUrl = document.getElementById("productImage").src;
+
+    const product = { name, price, quantity, imageUrl };
+
+    cart.push(product);
+    updateCart();
+    closeNav();
+}
+
+function updateCart() {
+    const cartItemsDiv = document.getElementById("cartItems");
+    const totalDiv = document.getElementById("total");
+    cartItemsDiv.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const cartItemDiv = document.createElement("div");
+        cartItemDiv.className = "cartItem";
+
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        cartItemDiv.innerHTML = `
+            <div class="itemImage"><img src="${item.imageUrl}" alt="${item.name}"></div>
+            <div class="itemName">${item.name}</div>
+            <div class="itemQuantity">Quantity: ${item.quantity}</div>
+            <div class="removeButton"><button onclick="removeFromCart(${index})">Remove</button></div>
+        `;
+
+        cartItemsDiv.appendChild(cartItemDiv);
+    });
+
+    totalDiv.innerText = `Total: P ${total.toFixed(2)}`;
+}
 
 function removeFromCart(index) {
-  cartItems.splice(index, 1);
-  displayCartItems();
+    cart.splice(index, 1);
+    updateCart();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateNavigation();
-});
-
-function updateNavigation() {
-  const navbar = document.querySelector(".navbar");
-  const menu = document.querySelector(".menu");
-  const loginLink = document.createElement("a");
-  loginLink.href = "login.html";
-  loginLink.textContent = "Login";
-  menu.appendChild(loginLink);
-}
+function closeItemDetails() {
+  document.getElementById("itemDetails").style.display = "none";
 }
